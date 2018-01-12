@@ -45,7 +45,7 @@ function changeProductListView(){
 }
 
 
-// function addProduct(){
+// function add1Product(){
 //   HomePage.openWomenMenu();
 //   HomePage.clickWomenOption();
 //   ProductsList.findProduct();
@@ -73,14 +73,15 @@ function addProducts(){
 
 
 
+//Test runner
 
-//Run tests
 openWebPage();
+
 //addProduct();
 //clickSubcategoryOnProductList();
 // sortProductList();
 // changeProductListView();
+//add1Product();
 addProducts();
-
 
 //closeDriver();
