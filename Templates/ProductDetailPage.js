@@ -11,9 +11,15 @@ var webdriver = require('selenium-webdriver'),
         addTocart.click();
       }
 
-      closeConfirmation(){        
+      layerCloseConfirmation(){
         let xButton = driver.wait(until.elementLocated(By.className("cross")), 3000);
         xButton.click();
+      }
+
+      layerContinueShopping(){
+        let contButton = driver.findElement(By.css("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span"));
+        contButton.click();
+        //span[title=Continue shopping]    
       }
     }
 //ableToSwitchToFrame

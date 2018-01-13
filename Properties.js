@@ -23,6 +23,12 @@ var properties = {
   QuickView: 'Quick view',
   More: 'More',
 
+  Product: {
+    productOption: 'Evening Dresses',
+    productName: 'Printed Dress',
+    action: 'More',
+  },
+
   Products: [{
     productOption: 'Evening Dresses',
     productName: 'Printed Dress',

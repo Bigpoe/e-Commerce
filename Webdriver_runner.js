@@ -45,15 +45,17 @@ function changeProductListView(){
 }
 
 
-// function add1Product(){
-//   HomePage.openWomenMenu();
-//   HomePage.clickWomenOption();
-//   ProductsList.findProduct();
-//   ProductsList.openProductHover();
-//   ProductsList.actionOnProduct();
-//   ProductDetail.clickAddToCart();
-//   ProductDetail.closeConfirmation();
-// }
+function add1Product(){
+  HomePage.openWomenMenu();
+  HomePage.clickWomenOption(properties.Product.productOption);
+  ProductsList.findProduct(properties.Product.productName);
+  ProductsList.openProductHover(properties.Product.productName);
+  ProductsList.actionOnProduct(properties.Product.action);
+  ProductDetail.clickAddToCart();
+  driver.sleep(2000);
+  //ProductDetail.layerCloseConfirmation();
+  ProductDetail.layerContinueShopping();
+}
 
 function addProducts(){
   properties.Products.forEach(function(product){
@@ -64,7 +66,7 @@ function addProducts(){
     ProductsList.actionOnProduct(product.action);
     ProductDetail.clickAddToCart();
     driver.sleep(2000);
-    ProductDetail.closeConfirmation();
+    ProductDetail.layerCloseConfirmation();
     driver.sleep(2000);
     HomePage.clickLogo();
   });
@@ -81,7 +83,7 @@ openWebPage();
 //clickSubcategoryOnProductList();
 // sortProductList();
 // changeProductListView();
-//add1Product();
-addProducts();
+add1Product();
+// addProducts();
 
 //closeDriver();
