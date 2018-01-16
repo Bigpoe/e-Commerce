@@ -86,4 +86,4 @@ openWebPage();
 add1Product();
 // addProducts();
 
-//closeDriver();
+closeDriver();
