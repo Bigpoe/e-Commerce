@@ -13,10 +13,19 @@ class BasePage {
     //driver.wait(until.titleIs('Submitted Successfully!'), 3000);
   }
 
+  goBack(){
+    driver.navigate().back();
+  }
+
+  goForward(){
+    driver.navigate().forward();
+  }
+
   closeDriver(){
-    driver.sleep(4000);
+    driver.sleep(3000);
     driver.quit();
   }
+
 }
 
 module.exports = BasePage;

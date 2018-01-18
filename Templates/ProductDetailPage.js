@@ -17,9 +17,10 @@ var webdriver = require('selenium-webdriver'),
       }
 
       layerContinueShopping(){
+
         let contButton = driver.findElement(By.css("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span"));
         contButton.click();
-        //span[title=Continue shopping]    
+        //span[title=Continue shopping]
       }
     }
 //ableToSwitchToFrame

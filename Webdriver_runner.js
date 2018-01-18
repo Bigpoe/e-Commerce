@@ -29,6 +29,17 @@ function getElementText(){
   HomePage.getButtonLoginText();
 }
 
+function getTextMenu(){
+    HomePage.getMenuOptionText(properties.MainMenuOption);
+}
+
+function checkOut(){
+  HomePage.openCartPreview();
+  HomePage.clickCheckoutButton();
+  HomePage.goBack();
+  HomePage.goForward();
+}
+
 function clickSubcategoryOnProductList(){
   HomePage.clickOnMainMenu(properties.MainMenuOption);
   ProductsList.clickSubcategory(properties.SubcategoryName);
@@ -44,7 +55,6 @@ function changeProductListView(){
   ProductsList.clickListView();
 }
 
-
 function add1Product(){
   HomePage.openWomenMenu();
   HomePage.clickWomenOption(properties.Product.productOption);
@@ -55,6 +65,8 @@ function add1Product(){
   driver.sleep(2000);
   //ProductDetail.layerCloseConfirmation();
   ProductDetail.layerContinueShopping();
+  driver.sleep(2000);
+  HomePage.clickLogo();
 }
 
 function addProducts(){
@@ -67,7 +79,7 @@ function addProducts(){
     ProductDetail.clickAddToCart();
     driver.sleep(2000);
     ProductDetail.layerCloseConfirmation();
-    driver.sleep(2000);
+    driver.sleep(1000);
     HomePage.clickLogo();
   });
 
@@ -75,15 +87,19 @@ function addProducts(){
 
 
 
+
 //Test runner
 
 openWebPage();
+
+//getTextMenu();
 
 //addProduct();
 //clickSubcategoryOnProductList();
 // sortProductList();
 // changeProductListView();
 add1Product();
+checkOut();
 // addProducts();
 
 //closeDriver();

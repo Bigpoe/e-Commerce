@@ -1,13 +1,23 @@
 var webdriver = require('selenium-webdriver'),
+    assert = require('assert'),
     basePage = require('./BasePage'),
     properties = require ('../Properties'),
     By = webdriver.By,
     until = webdriver.until;
 
+
     class Home extends basePage{
 
       getTitle(){
         return driver.getTitle();
+      }
+
+      getMenuOptionText(option){
+        let textOption = driver.findElement(By.css("#block_top_menu > ul > li:nth-child(1) > a")).getText().then(textValue => {
+          assert.equal(option, textValue);
+          console.log("Getted value  is " + textValue);
+          console.log("Value sent was " + option);
+        });
       }
 
       clickLogo(){
@@ -32,7 +42,7 @@ var webdriver = require('selenium-webdriver'),
       }
 
       openCartPreview(){
-        const openCart = driver.findElement(By.css("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > a"));
+        let openCart = driver.findElement(By.css("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > a > b"));
         driver.actions()
         .mouseMove(openCart)
         //.click()
@@ -40,18 +50,8 @@ var webdriver = require('selenium-webdriver'),
       }
 
       clickCheckoutButton(){
-        const checkoutButton = driver.wait(until.elementLocated(By.linkText("Check out")),3000).then(function(text){
-          console.log("Display checkout button " + text);
-        });
-        //checkoutButton.click();
-
-        //driver.findElement(By.id('button_order_cart'));
-
-        /*let cartAction = driver.findElement(By.id('button_order_cart'));
-        driver.actions()
-        .mouseMove(cartAction)
-        .click()
-        .perform();*/
+        let checkoutButton = driver.findElement(By.css("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > a > b"));
+        checkoutButton.click();
       }
 
       clickOnMainMenu(mainMenuOption){
