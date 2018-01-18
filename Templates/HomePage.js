@@ -13,7 +13,7 @@ var webdriver = require('selenium-webdriver'),
       }
 
       getMenuOptionText(option){
-        let textOption = driver.findElement(By.css("#block_top_menu > ul > li:nth-child(1) > a")).getText().then(textValue => {
+        let text = driver.findElement(By.css("#block_top_menu > ul > li:nth-child(1) > a")).getText().then(textValue => {
           assert.equal(option, textValue);
           console.log("Getted value  is " + textValue);
           console.log("Value sent was " + option);
@@ -82,8 +82,6 @@ var webdriver = require('selenium-webdriver'),
       }
 
       openDressesMenu(){
-        //Go to the DRESSES menu activated by hover over and open it
-
         let dressesMenu = driver.findElement(By.css("#block_top_menu > ul > li:nth-child(2) > a"));
         driver.actions()
         .mouseMove(dressesMenu)
@@ -92,8 +90,6 @@ var webdriver = require('selenium-webdriver'),
       }
 
       clickDressesButton(productOption){
-        //Select an option from the options displayed
-
         let dressesSubMenu = driver.findElement(By.linkText(productOption));
         driver.actions()
         .mouseMove(dressesSubMenu)
