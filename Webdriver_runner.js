@@ -102,4 +102,4 @@ add1Product();
 checkOut();
 // addProducts();
 
-//closeDriver();
+closeDriver();
