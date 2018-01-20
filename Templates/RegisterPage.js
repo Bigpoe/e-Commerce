@@ -7,22 +7,22 @@ var webdriver = require('selenium-webdriver'),
 
     class Register extends basePage{
 
-      genderMr(){
+      genderMr(title){
         let mr = driver.findElement(By.id('uniform-id_gender1'));
         mr.click();
       }
 
-      genderMrs(){
+      genderMrs(title){
         let mrs = driver.findElement(By.id('uniform-id_gender2'));
         mr.click();
       }
 
-      firstName(){
+      firstName(firstName){
         let name = driver.findElement(By.id('customer_firstname'));
         name.sendKeys();
       }
 
-      lastName(){
+      lastName(lastName){
         let name = driver.findElement(By.id('customer_lastname'));
         name.sendKeys();
       }
@@ -34,16 +34,104 @@ var webdriver = require('selenium-webdriver'),
         });
       }
 
-      dateDay(){
-
+      password(password){
+        let pass = driver.findElement(By.id('passwd'));
+        pass.sendKeys();
       }
 
-      dateMonth(){
-
+      dateDay(dayDate){
+        let day = driver.findElement(By.id('days'));
+        day.sendKeys();
       }
 
-      dateYear(){
-        
+      dateMonth(monthDate){
+        let month = driver.findElement(By.id('months'));
+        month.sendKeys();
+      }
+
+      dateYear(yearDate){
+        let year = driver.findElement(By.id('years'));
+        year.sendKeys();
+      }
+
+      newsLetterCheck(){
+        let newsLetter = driver.findElement(By.id('newsletter'));
+        newsLetter.click();
+      }
+
+      specialOffersCheck(){
+        let specialOffers = driver.findElement(By.id('optin'));
+        specialOffers.click();
+      }
+
+      addressFirstName(){
+        let name = driver.findElement(By.id('firstname'));
+        name.sendKeys();
+      }
+
+      addressLastName(){
+        let lName = driver.findElement(By.id('lastname'));
+        lName.sendKeys();
+      }
+
+      company(){
+        let company = driver.findElement(By.id('company'));
+        company.sendKeys();
+      }
+
+      address1(){
+        let address1 = driver.findElement(By.id('address1'));
+        address1.sendKeys();
+      }
+
+      address2(){
+        let address2 = driver.findElement(By.id('address2'));
+        address2.sendKeys();
+      }
+
+      city(){
+        let city = driver.findElement(By.id('city'));
+        city.sendKeys();
+      }
+
+      state(){
+        let state = driver.findElement(By.id('id_state'));
+        state.sendKeys();
+      }
+
+      zipCode(){
+        let zip = driver.findElement(By.id('postcode'));
+        zip.sendKeys();
+      }
+
+      country(){
+        let country = driver.findElement(By.id('id_country'));
+        country.sendKeys();
+      }
+
+      additionalInfo(){
+        let info = driver.findElement(By.id('other'));
+        info.sendKeys();
+      }
+
+      homePhone(){
+        let homeP = driver.findElement(By.id('phone'));
+        homeP.sendKeys();
+      }
+
+      mobilePhone(){
+        let mobileP = driver.findElement(By.id('phone_mobile'));
+        mobileP.sendKeys();
+      }
+
+      aliasAddress(){
+        let allias = driver.findElement(By.id('alias'));
+        allias.sendKeys();
+      }
+
+      registerButton(){
+        let register = driver.findElement(By.id('submitAccount'));
+        register.click();
       }
 
     }

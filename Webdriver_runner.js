@@ -62,9 +62,8 @@ function add1Product(){
   ProductsList.openProductHover(properties.Product.productName);
   ProductsList.actionOnProduct(properties.Product.action);
   ProductDetail.clickAddToCart();
-  driver.sleep(2000);
-  //ProductDetail.layerCloseConfirmation();
-  ProductDetail.layerContinueShopping();
+  ProductDetail.layerCloseConfirmation();
+  //ProductDetail.layerContinueShopping();
   driver.sleep(2000);
   HomePage.clickLogo();
 }
@@ -99,7 +98,7 @@ openWebPage();
 // sortProductList();
 // changeProductListView();
 add1Product();
-checkOut();
+//checkOut();
 // addProducts();
 
 closeDriver();

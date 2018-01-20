@@ -1,9 +1,40 @@
 var properties = {
   URL: 'http://automationpractice.com/index.php',
 
-  //Credentials
-  UserName: 'username@mail.com',
-  Password: 'S0undcl0ud',
+  //Login credentials
+  Login:{
+    UserName: 'username@mail.com',
+    Password: 'S0undcl0ud',
+  },
+
+  //Register form
+  RegisterForm: {
+    Title: '',
+    FirstName: '',
+    LastName:'',
+    Email:'',
+    Password:'',
+    DayDate:'',
+    MonthDate:'',
+    YearDate:'',
+    NewsLetter:'',
+    SpecialOffers:'',
+    AddressFirstName:'',
+    AddressLastName:'',
+    Company:'',
+    Address:'',
+    Address2:'',
+    City:'',
+    State:'',
+    Zip:'',
+    Country:'',
+    AditionalInfo:'',
+    HomePhone:'',
+    MobilePhone:'',
+    Alias:'',
+  },
+
+
 
   MainMenuOption: 'WOMEN',
   //Women menu option
@@ -18,17 +49,20 @@ var properties = {
   ProductSelected: 'Printed Dress',
 
   //Product list actions
-  SortList: 'Price: Highest first',
-  AddToCart: 'Add to cart',
-  QuickView: 'Quick view',
-  More: 'More',
+  ProductActions:{
+    SortList: 'Price: Highest first',
+    AddToCart: 'Add to cart',
+    QuickView: 'Quick view',
+    More: 'More',
+  },
 
+  //1 product info
   Product: {
     productOption: 'Evening Dresses',
     productName: 'Printed Dress',
     action: 'More',
   },
-
+  //Some products info
   Products: [{
     productOption: 'Evening Dresses',
     productName: 'Printed Dress',
