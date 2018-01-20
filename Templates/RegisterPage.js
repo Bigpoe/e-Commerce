@@ -54,77 +54,77 @@ var webdriver = require('selenium-webdriver'),
         year.sendKeys();
       }
 
-      newsLetterCheck(){
+      newsLetterCheck(news){
         let newsLetter = driver.findElement(By.id('newsletter'));
         newsLetter.click();
       }
 
-      specialOffersCheck(){
+      specialOffersCheck(offers){
         let specialOffers = driver.findElement(By.id('optin'));
         specialOffers.click();
       }
 
-      addressFirstName(){
+      addressFirstName(addressFN){
         let name = driver.findElement(By.id('firstname'));
         name.sendKeys();
       }
 
-      addressLastName(){
+      addressLastName(addressLN){
         let lName = driver.findElement(By.id('lastname'));
         lName.sendKeys();
       }
 
-      company(){
+      company(companyN){
         let company = driver.findElement(By.id('company'));
         company.sendKeys();
       }
 
-      address1(){
+      address1(addrrs1){
         let address1 = driver.findElement(By.id('address1'));
         address1.sendKeys();
       }
 
-      address2(){
+      address2(addrrs2){
         let address2 = driver.findElement(By.id('address2'));
         address2.sendKeys();
       }
 
-      city(){
+      city(cityName){
         let city = driver.findElement(By.id('city'));
         city.sendKeys();
       }
 
-      state(){
+      state(stateName){
         let state = driver.findElement(By.id('id_state'));
         state.sendKeys();
       }
 
-      zipCode(){
+      zipCode(zcode){
         let zip = driver.findElement(By.id('postcode'));
         zip.sendKeys();
       }
 
-      country(){
+      country(contryName){
         let country = driver.findElement(By.id('id_country'));
         country.sendKeys();
       }
 
-      additionalInfo(){
+      additionalInfo(AddInf){
         let info = driver.findElement(By.id('other'));
         info.sendKeys();
       }
 
-      homePhone(){
+      homePhone(hmPhn){
         let homeP = driver.findElement(By.id('phone'));
         homeP.sendKeys();
       }
 
-      mobilePhone(){
+      mobilePhone(mblPhn){
         let mobileP = driver.findElement(By.id('phone_mobile'));
         mobileP.sendKeys();
       }
 
-      aliasAddress(){
+      aliasAddress(nick){
         let allias = driver.findElement(By.id('alias'));
         allias.sendKeys();
       }
