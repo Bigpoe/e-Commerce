@@ -1,7 +1,15 @@
 var properties = require ('./Properties'),
     HomePage = require ('./Templates/HomePage'),
+    LoginPage = require ('./Templates/LoginPage'),
+    RegisterPage = require ('./Templates/RegisterPage'),
     ProductsList = require ('./Templates/ProductsListPage'),
-    ProductDetail = require ('./Templates/ProductDetailPage');
+    ProductDetail = require ('./Templates/ProductDetailPage'),
+    CartView = require ('./Templates/CartViewPage'),
+    Checkout3Address = require ('./Templates/Checkout3AddressPage'),
+    Checkout4Shipping = require ('./Templates/Checkout4ShippingPage'),
+    Checkout5Payment = require ('./Templates/Checkout5PaymentPage'),
+    Checkout5OrderSummary = require ('./Templates/Checkout5OrderSummaryPage'),
+    CheckoutOrderComplete = require ('./Templates/CheckoutOrderCompletePage');
 
 //Tests Suites
 
@@ -13,16 +21,43 @@ function closeDriver(){
   HomePage.closeDriver();
 }
 
-function doLogOut(){
-    HomePage.clickLogin();
-}
-
 function doLogin(){
     HomePage.clickLogin();
-    LoginPage.fillEmail();
-    LoginPage.clickContiuneButton();
-    LoginPage.fillPassword();
-    LoginPage.clickLoginButton();
+    LoginPage.fillEmail(properties.Login.UserName);
+    LoginPage.fillPassword(properties.Login.Password);
+    LoginPage.clickSignIn();
+}
+
+
+function doLogOut(){
+    HomePage.clickLogOut();
+}
+
+function registerNewUser(){
+  HomePage.clickLogin();
+  LoginPage.registerEmail(properties.RegisterForm.Email);
+  LoginPage.clickCreateAccount();
+  driver.sleep(2000);
+  RegisterPage.genderMr();
+  RegisterPage.firstName(properties.RegisterForm.FirstName);
+  RegisterPage.lastName(properties.RegisterForm.LastName);
+  RegisterPage.password(properties.RegisterForm.Password);
+  RegisterPage.dateDay(properties.RegisterForm.DayDate);
+  RegisterPage.dateMonth(properties.RegisterForm.MonthDate);
+  RegisterPage.dateYear(properties.RegisterForm.YearDate);
+  RegisterPage.addressFirstName(properties.RegisterForm.AddressLastName);
+  RegisterPage.addressLastName(properties.RegisterForm.AddressLastName);
+  RegisterPage.company(properties.RegisterForm.Company);
+  RegisterPage.address1(properties.RegisterForm.Address);
+  RegisterPage.city(properties.RegisterForm.City);
+  RegisterPage.state(properties.RegisterForm.State);
+  RegisterPage.zipCode(properties.RegisterForm.Zip);
+  RegisterPage.country(properties.RegisterForm.Country);
+  RegisterPage.additionalInfo(properties.RegisterForm.AditionalInfo);
+  RegisterPage.homePhone(properties.RegisterForm.HomePhone);
+  RegisterPage.mobilePhone(properties.RegisterForm.MobilePhone);
+  RegisterPage.aliasAddress(properties.RegisterForm.Alias);
+  RegisterPage.registerButton();
 }
 
 function getElementText(){
@@ -31,13 +66,6 @@ function getElementText(){
 
 function getTextMenu(){
     HomePage.getMenuOptionText(properties.MainMenuOption);
-}
-
-function checkOut(){
-  HomePage.openCartPreview();
-  HomePage.clickCheckoutButton();
-  HomePage.goBack();
-  HomePage.goForward();
 }
 
 function clickSubcategoryOnProductList(){
@@ -62,6 +90,7 @@ function add1Product(){
   ProductsList.openProductHover(properties.Product.productName);
   ProductsList.actionOnProduct(properties.Product.action);
   ProductDetail.clickAddToCart();
+  driver.sleep(2000);
   ProductDetail.layerCloseConfirmation();
   //ProductDetail.layerContinueShopping();
   driver.sleep(2000);
@@ -84,6 +113,17 @@ function addProducts(){
 
 }
 
+function checkOut(){
+  HomePage.openCartPreview();
+  HomePage.clickCheckoutButton();
+  CartView.clickCheckoutButton();
+  Checkout3Address.clickContinueCheckout();
+  Checkout4Shipping.checkTermsOfService();
+  Checkout4Shipping.clickContinueCheckout();
+  Checkout5Payment.clickPayByBankWire();
+  Checkout5OrderSummary.clickConfirmOrder();
+  CheckoutOrderComplete.clickBackToOrders();
+}
 
 
 
@@ -93,12 +133,14 @@ openWebPage();
 
 //getTextMenu();
 
-//addProduct();
+//registerNewUser();
+doLogin();
+//doLogOut();
 //clickSubcategoryOnProductList();
 // sortProductList();
 // changeProductListView();
 add1Product();
-//checkOut();
+checkOut();
 // addProducts();
 
-closeDriver();
+//closeDriver();

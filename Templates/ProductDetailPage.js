@@ -11,14 +11,16 @@ var webdriver = require('selenium-webdriver'),
         addTocart.click();
       }
 
-      layerCloseConfirmation(){        
-        driver.wait(until.elementLocated(By.css("#layer_cart > div.clearfix > div.layer_cart_product.col-xs-12.col-md-6 > h2")), 3000).getText().then(confirmText =>{
-          assert.equal("Product successfully added to your shopping cart", confirmText);
-          console.log(confirmText);
-        });
+      layerCloseConfirmation(){
+        let close = driver.findElement(By.css("#layer_cart > div.clearfix > div.layer_cart_product.col-xs-12.col-md-6 > span"));
+        close.click();
+        //  driver.wait(until.elementLocated(By.css("#layer_cart > div.clearfix > div.layer_cart_product.col-xs-12.col-md-6 > h2")),3000).getText().then(confirmText =>{
+        //   //assert.equal("Product successfully added to your shopping cart", confirmText);
+        //   console.log(confirmText);
+        // });
 
-        let xButton = driver.wait(until.elementLocated(By.className("cross")), 3000);
-        xButton.click();
+        // let xButton = driver.wait(until.elementLocated(By.className("cross")), 3000);
+        // xButton.click();
       }
 
       layerContinueShopping(){

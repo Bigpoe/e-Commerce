@@ -7,27 +7,31 @@ var webdriver = require('selenium-webdriver'),
 
     class Login extends basePage{
 
-      registerEmail(){
+      registerEmail(rEmail){
         let email = driver.findElement(By.id('email_create'));
-        email.sendKeys();
+        email.sendKeys(rEmail);
       }
 
       clickCreateAccount(){
         let createAccount = driver.findElement(By.id('SubmitCreate'));
         createAccount.click();
+        driver.wait(until.elementLocated(By.css("#noSlide > h1")),5000).getText().then(title =>{
+          assert.equal("CREATE AN ACCOUNT",title);
+          console.log("Title view " + title);
+        });
       }
 
-      loginEmail(){
+      fillEmail(lEmail){
         let email = driver.findElement(By.id('email'));
-        email.sendKeys();
+        email.sendKeys(lEmail);
       }
 
-      loginPassword(){
+      fillPassword(pss){
         let password = driver.findElement(By.id('passwd'));
-        password.sendKeys();
+        password.sendKeys(pss);
       }
 
-      forgotPassword(){
+      clickForgotPassword(){
         let forgotP = driver.findElement(By.css("#login_form > div > p.lost_password.form-group > a"));
         forgotP.click();
       }
@@ -41,13 +45,16 @@ var webdriver = require('selenium-webdriver'),
         let text = driver.findElement(By.css("#center_column > div.alert.alert-danger > ol > li")).getText().then(textValue => {
           assert.equal("Authentication failed.", textValue);
           console.log(textValue);
+        });
       }
 
       registerErrorMessage(){
         let text = driver.findElement(By.css("#create_account_error > ol > li")).getText().then(textValue => {
           assert.equal("Invalid email address.", textValue);
           console.log(textValue);
-      });    
+        });
+      }
+
     }
 
-    module.exports = new Login();
+  module.exports = new Login();

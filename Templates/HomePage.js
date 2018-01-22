@@ -31,8 +31,17 @@ var webdriver = require('selenium-webdriver'),
       }
 
       clickLogin(){
-        const loginButton = driver.wait(until.elementLocated(By.className("login")), 2000);
+        let loginButton = driver.findElement(By.className("login"));
         loginButton.click();
+        let title = driver.wait(until.elementLocated(By.css("#center_column > h1")),3000).getText().then(text => {
+          assert.equal("AUTHENTICATION",text);
+          console.log("Title view " + text);
+        });
+      }
+
+      clickLogOut(){
+        let logOutButton = driver.findElement(By.className("logout"));
+        logOutButton.click();
       }
 
       getButtonLoginText(){
