@@ -50,17 +50,7 @@ exports.testCloseDriver = function closeDriver(){
 //
 
 //
-// function checkOut(){
-//   HomePage.openCartPreview();
-//   HomePage.clickCheckoutButton();
-//   CartView.clickCheckoutButton();
-//   Checkout3Address.clickContinueCheckout();
-//   Checkout4Shipping.checkTermsOfService();
-//   Checkout4Shipping.clickContinueCheckout();
-//   Checkout5Payment.clickPayByBankWire();
-//   Checkout5OrderSummary.clickConfirmOrder();
-//   CheckoutOrderComplete.clickBackToOrders();
-// }
+
 //
 //
 //

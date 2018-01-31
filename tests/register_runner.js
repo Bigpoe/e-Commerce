@@ -6,4 +6,3 @@ var properties = require ('../Properties'),
 Register.testOpenPage();
 
 Register.testRegisterValidUser();
-Register.testDoLogout();
